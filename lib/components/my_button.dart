@@ -1,27 +1,29 @@
-import 'package:farmmitra/components/input_text.dart';
-import 'package:farmmitra/pages/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  const MyButton({super.key});
+  final String buttonText;
+  final VoidCallback onPressed;
+  const MyButton({super.key, required this.buttonText, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('My Button')),
-      body: Center(
-        child: InputTextField(
-          buttonText: 'Back',
-          onPressed: () {
-            // Navigate to Dashboard on sign in
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SignIn()),
-            );
-          },
-        ),
-        
-      ),
+    return Center(
+          child: ElevatedButton(
+            onPressed: onPressed,
+            style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white, 
+              backgroundColor: Colors.black, 
+              padding: const EdgeInsets.symmetric(horizontal: 130, vertical: 18), // Text color
+              textStyle: const TextStyle(
+                fontSize: 16,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+                 // Rounded corners
+              ),
+            ),
+            child: Text(buttonText),
+          ),
     );
   }
 }

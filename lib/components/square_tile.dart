@@ -1,26 +1,19 @@
-import 'package:farmmitra/components/input_text.dart';
-import 'package:farmmitra/pages/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class SquareTile extends StatelessWidget {
-  const SquareTile({super.key});
+  final String imagePath;
+  const SquareTile({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Square Tile')),
-      body: Center(
-        child: InputTextField(
-          buttonText: 'Bcak',
-          onPressed: () {
-            // Navigate to Dashboard on sign in
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SignIn()),
-            );
-          },
-        ),
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white),
+        borderRadius: BorderRadius.circular(8),
+        color: Colors.grey[400],
       ),
+      child: Image.asset(imagePath, height: 40,)
     );
   }
 }
