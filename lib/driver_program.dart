@@ -1,3 +1,4 @@
+import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
 import 'package:farmmitra/components/square_tile.dart';
 import 'package:farmmitra/pages/sign_in.dart';
@@ -10,16 +11,21 @@ class DriverProgram extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title:const  Text('My App')),
-      body: const Center(
-        child: Center(
+      backgroundColor: Colors.grey.shade300,
+      body: Center(
           child: Column(
+            
             children: [
-              SquareTile(imagePath: 'lib/assets/images/google.png'),
               SizedBox(height: 25.0,),
-              SquareTile(imagePath: 'lib/assets/images/apple.png')
+              MyButton(buttonText: 'back', onPressed: () =>{
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignIn()))
+              }),
+              SizedBox(height: 25.0,),
+              InputTextField(hintText: 'Username',obscureText: false,),
+              SizedBox(height: 25.0,),
+              InputTextField(hintText: 'Password',obscureText: true,),
             ],
           ),
-        ),
       ),
     );
   }
