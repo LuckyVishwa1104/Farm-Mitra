@@ -19,7 +19,7 @@ class InputTextField extends StatelessWidget {
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.grey.shade500)),
           focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black)),
+              borderSide: BorderSide(color: Colors.black, width: 1.5)),
           fillColor: Colors.grey.shade200,
           filled: true,
           hintText: hintText,

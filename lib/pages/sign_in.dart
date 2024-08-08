@@ -22,52 +22,130 @@ class SignIn extends StatelessWidget {
                 children: [
                   // content of the sign-in page
                   // SizedBox(height: 20.0,),
-                  // logo/icon 
-                  Icon(Icons.lock,size: 100.0,),
-                  SizedBox(height: 20.0,),
+                  // logo/icon
+                  Icon(
+                    Icons.lock,
+                    size: 100.0,
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
 
                   // greeting text
-                  Text('Welcome, hope you are doing well!',
-                  style: TextStyle(color: Colors.grey[700], fontSize: 16),),
-                  SizedBox(height: 20.0,),
+                  Text(
+                    'Welcome, hope you are doing well!',
+                    style: TextStyle(color: Colors.grey[700], fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
 
                   // text field for username
                   InputTextField(hintText: 'Username', obscureText: false),
-                  SizedBox(height: 20.0,),
+                  SizedBox(
+                    height: 20.0,
+                  ),
 
                   // text field for password
                   InputTextField(hintText: 'Password', obscureText: true),
-                  SizedBox(height: 20.0,),
+                  SizedBox(
+                    height: 5.0,
+                  ),
 
                   // forgot password
-                  Text('Forgot Password!', style: TextStyle(color: Colors.grey[700],fontSize: 16.0),),
-                  SizedBox(height: 20.0,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            color: Colors.grey[700],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
 
                   // sign-in button
-                  MyButton(buttonText: 'Sign In', onPressed: () => {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DriverProgram()))
-                  }),
-                  SizedBox(height: 20.0,),
+                  MyButton(
+                      buttonText: 'Sign In',
+                      onPressed: () => {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DriverProgram()))
+                          }),
+                  SizedBox(
+                    height: 25.0,
+                  ),
+
+                  // or continue with
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[700],
+                        )),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Text(
+                            'Or continue with',
+                            style: TextStyle(color: Colors.grey.shade700),
+                          ),
+                        ),
+                        Expanded(
+                            child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[700],
+                        )),
+                      ],
+                    ),
+                  ),
+
+                  SizedBox(
+                    height: 25.0,
+                  ),
 
                   //google/apple login button
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SquareTile(imagePath: 'lib/assets/images/google.png'),
-                      SizedBox(width: 25,),
+                      SizedBox(
+                        width: 25,
+                      ),
                       SquareTile(imagePath: 'lib/assets/images/apple.png')
                     ],
                   ),
-                  SizedBox(height: 20.0,),
+                  SizedBox(
+                    height: 20.0,
+                  ),
 
                   // sign-up page link
-                  Text('Not a member! Register now.')
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Not a member?',style: TextStyle(color: Colors.grey[700]),),
+                      SizedBox(width: 4.0,),
+                      Text(
+                            'Register now!',
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                    ],
+                  ),
                 ],
               ),
             ),
           ),
         ),
-      
       ),
     );
   }
