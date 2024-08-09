@@ -20,6 +20,8 @@ class MyButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                  // Rounded corners
               ),
+            ).copyWith(
+              overlayColor: MaterialStateProperty.all(Colors.transparent)
             ),
             child: Text(buttonText),
     );
