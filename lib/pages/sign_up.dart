@@ -1,3 +1,4 @@
+import 'package:farmmitra/components/custom_text_button.dart';
 import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
 import 'package:farmmitra/components/square_tile.dart';
@@ -19,11 +20,8 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Container(
-        width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(color: Colors.grey.shade200),
+        decoration: BoxDecoration(color: Colors.grey.shade100),
         child: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -125,12 +123,14 @@ class SignUp extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Already have account?',style: TextStyle(color: Colors.grey[700]),),
-                    SizedBox(width: 4.0,),
                     Text(
-                          'Sign In!',
-                          style: TextStyle(color: Colors.blue),
-                        ),
+                      'Already have account?',
+                      style: TextStyle(color: Colors.grey[700]),
+                    ),
+                    CustomTextButton(
+                      buttonText: 'Sign In!',
+                      onPressed: () => redirectToSignIn(context),
+                    ),
                   ],
                 ),
               ],
