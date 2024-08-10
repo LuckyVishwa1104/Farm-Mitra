@@ -1,28 +1,21 @@
 import 'package:farmmitra/components/custom_text_button.dart';
 import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
+import 'package:farmmitra/components/or_continue_with.dart';
 import 'package:farmmitra/components/square_tile.dart';
 import 'package:farmmitra/driver_program.dart';
+import 'package:farmmitra/pages/forgot_password.dart';
 import 'package:farmmitra/pages/sign_up.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
-  void redirectToSignUp(BuildContext context) {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => SignUp(),
-      ),
-    );
-  }
 
-  void redirectToHome(BuildContext context) {
+  void redirectTo(BuildContext context, Widget designation) {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(
-        builder: (context) => DriverProgram(),
-      ),
+      MaterialPageRoute(builder: (context) => designation),
     );
   }
 
@@ -75,7 +68,14 @@ class SignIn extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      CustomTextButton(buttonText: 'Forgot Password?', onPressed: ()=>{}),
+                      CustomTextButton(
+                        buttonText: 'Forgot Password?',
+                        onPressed: () => redirectTo(
+                          context,
+                          ForgotPassword(),
+                        ),
+                        fontSize: 15.0,
+                      ),
                     ],
                   ),
                 ),
@@ -86,37 +86,17 @@ class SignIn extends StatelessWidget {
                 // sign-in button
                 MyButton(
                   buttonText: 'Sign In',
-                  onPressed: () => redirectToHome(context),
+                  onPressed: () => redirectTo(
+                    context,
+                    DriverProgram(),
+                  ),
                 ),
                 SizedBox(
                   height: 25.0,
                 ),
 
                 // or continue with
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                          child: Divider(
-                        thickness: 0.5,
-                        color: Colors.grey[700],
-                      )),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text(
-                          'Or continue with',
-                          style: TextStyle(color: Colors.grey.shade700),
-                        ),
-                      ),
-                      Expanded(
-                          child: Divider(
-                        thickness: 0.5,
-                        color: Colors.grey[700],
-                      )),
-                    ],
-                  ),
-                ),
+                OrContinueWith(),
 
                 SizedBox(
                   height: 25.0,
@@ -145,10 +125,16 @@ class SignIn extends StatelessWidget {
                       'Not a member?',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
-                    SizedBox(width: 7.0,),
+                    SizedBox(
+                      width: 7.0,
+                    ),
                     CustomTextButton(
                       buttonText: 'Register Now!',
-                      onPressed: () => redirectToSignUp(context),
+                      onPressed: () => redirectTo(
+                        context,
+                        SignUp(),
+                      ),
+                      fontSize: 14,
                     ),
                   ],
                 ),

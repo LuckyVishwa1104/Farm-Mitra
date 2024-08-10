@@ -1,6 +1,7 @@
 import 'package:farmmitra/components/custom_text_button.dart';
 import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
+import 'package:farmmitra/components/or_continue_with.dart';
 import 'package:farmmitra/components/square_tile.dart';
 import 'package:farmmitra/pages/sign_in.dart';
 import 'package:flutter/material.dart';
@@ -74,32 +75,7 @@ class SignUp extends StatelessWidget {
                 ),
 
                 // --- or ---
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Divider(
-                          thickness: 0.5,
-                          color: Colors.grey[700],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text(
-                          'Or continue with',
-                          style: TextStyle(color: Colors.grey[700]),
-                        ),
-                      ),
-                      Expanded(
-                        child: Divider(
-                          thickness: 0.5,
-                          color: Colors.grey[700],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                OrContinueWith(),
                 SizedBox(
                   height: 20.0,
                 ),
@@ -130,6 +106,7 @@ class SignUp extends StatelessWidget {
                     CustomTextButton(
                       buttonText: 'Sign In!',
                       onPressed: () => redirectToSignIn(context),
+                      fontSize: 14.0,
                     ),
                   ],
                 ),

@@ -12,7 +12,7 @@ class MyButton extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white, 
               backgroundColor: Colors.black, 
-              padding: const EdgeInsets.symmetric(horizontal: 130, vertical: 20), // Text color
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20), // Text color
               textStyle: const TextStyle(
                 fontSize: 16,
               ),
