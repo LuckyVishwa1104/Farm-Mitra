@@ -1,6 +1,7 @@
 import 'package:farmmitra/components/custom_text_button.dart';
 import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
+import 'package:farmmitra/components/otp_text_field.dart';
 import 'package:farmmitra/pages/sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class ForgotPassword extends StatelessWidget {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => SignIn(),
+        builder: (context) => const SignIn(),
       ),
     );
   }
@@ -26,6 +27,30 @@ class ForgotPassword extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // icon for simplicity
+              Icon(
+                  Icons.lock,
+                  size: 100,
+                ),
+              SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  "Reset your Password to continue.",
+                  style: TextStyle(color: Colors.grey[700], fontSize: 16),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+              // input field for email address
+              InputTextField(
+                hintText: 'Email address',
+                obscureText: false,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+
               // text field for new password
               InputTextField(
                 hintText: 'New Password',
@@ -48,19 +73,19 @@ class ForgotPassword extends StatelessWidget {
               CustomTextButton(
                 buttonText: 'Get OTP!',
                 onPressed: () => generateOTP(),
-                fontSize: 20.0,
+                fontSize: 16.0,
               ),
               SizedBox(
-                height: 15.0,
+                height: 2.0,
               ),
 
               // input field for OTP
-              InputTextField(
-                hintText: 'Enter OTP!',
-                obscureText: false,
-              ),
+              OtpTextField(onCompleted: (otp) {
+                print('Entered OTP: $otp');
+                // Handle OTP submission here
+              },),
               SizedBox(
-                height: 25.0,
+                height: 28.0,
               ),
 
               // button for restting the password
