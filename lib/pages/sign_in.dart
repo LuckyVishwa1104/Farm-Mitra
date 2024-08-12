@@ -2,22 +2,16 @@ import 'package:farmmitra/components/custom_text_button.dart';
 import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
 import 'package:farmmitra/components/or_continue_with.dart';
-import 'package:farmmitra/components/square_tile.dart';
+import 'package:farmmitra/components/registration_footer.dart';
+import 'package:farmmitra/components/secondary_method.dart';
+import 'package:farmmitra/components/navigation_util.dart';
 import 'package:farmmitra/driver_program.dart';
 import 'package:farmmitra/pages/forgot_password.dart';
 import 'package:farmmitra/pages/sign_up.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
-
-  void redirectTo(BuildContext context, Widget designation) {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => designation),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,40 +97,16 @@ class SignIn extends StatelessWidget {
                 ),
 
                 //google/apple login button
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SquareTile(imagePath: 'lib/assets/images/google.png'),
-                    SizedBox(
-                      width: 25,
-                    ),
-                    SquareTile(imagePath: 'lib/assets/images/apple.png')
-                  ],
-                ),
+                SecondaryMethod(),
                 SizedBox(
                   height: 20.0,
                 ),
 
                 // sign-up page link
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Not a member?',
-                      style: TextStyle(color: Colors.grey[700]),
-                    ),
-                    SizedBox(
-                      width: 7.0,
-                    ),
-                    CustomTextButton(
-                      buttonText: 'Register Now!',
-                      onPressed: () => redirectTo(
-                        context,
-                        SignUp(),
-                      ),
-                      fontSize: 14,
-                    ),
-                  ],
+                RegistrationFooter(
+                  greetMessage: 'Not a member?',
+                  buttonText: 'Registre Now!',
+                  pageDesignation: SignUp(),
                 ),
               ],
             ),

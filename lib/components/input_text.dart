@@ -23,7 +23,7 @@ class InputTextField extends StatelessWidget {
           fillColor: Colors.grey.shade200,
           filled: true,
           hintText: hintText,
-          contentPadding: EdgeInsets.symmetric(vertical: 18,horizontal: 10)
+          contentPadding: const EdgeInsets.symmetric(vertical: 18,horizontal: 10)
           
         ),
       ),

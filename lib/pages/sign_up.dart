@@ -1,8 +1,8 @@
-import 'package:farmmitra/components/custom_text_button.dart';
 import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
 import 'package:farmmitra/components/or_continue_with.dart';
-import 'package:farmmitra/components/square_tile.dart';
+import 'package:farmmitra/components/registration_footer.dart';
+import 'package:farmmitra/components/secondary_method.dart';
 import 'package:farmmitra/pages/sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -81,34 +81,16 @@ class SignUp extends StatelessWidget {
                 ),
 
                 // sign up using google/apple
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SquareTile(imagePath: 'lib/assets/images/google.png'),
-                    SizedBox(
-                      width: 25,
-                    ),
-                    SquareTile(imagePath: 'lib/assets/images/apple.png')
-                  ],
-                ),
+                SecondaryMethod(),
                 SizedBox(
                   height: 20.0,
                 ),
 
                 // already have account - sign In
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Already have account?',
-                      style: TextStyle(color: Colors.grey[700]),
-                    ),
-                    CustomTextButton(
-                      buttonText: 'Sign In!',
-                      onPressed: () => redirectToSignIn(context),
-                      fontSize: 14.0,
-                    ),
-                  ],
+                RegistrationFooter(
+                  greetMessage: 'Already have account?',
+                  buttonText: 'Sign In!',
+                  pageDesignation: SignIn(),
                 ),
               ],
             ),
