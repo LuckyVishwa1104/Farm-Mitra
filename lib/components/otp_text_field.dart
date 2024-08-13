@@ -60,7 +60,7 @@ class _OtpTextFieldState extends State<OtpTextField> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: Colors.grey.shade200,
@@ -68,42 +68,36 @@ class _OtpTextFieldState extends State<OtpTextField> {
             color: Colors.grey.shade500,
           ),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(4, (index) {
-            return Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                ),
-                child: TextField(
-                  controller: _controllers[index],
-                  focusNode: _focusNodes[index],
-                  textAlign: TextAlign.center,
-                  keyboardType: TextInputType.number,
-                  maxLength: 1,
-                  decoration: InputDecoration(
-                    counterText: '', // Hide the character counter
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: _hasFocus[index]
-                            ? const Color.fromARGB(255, 54, 52, 52)
-                            : Colors.grey.shade500,
-                        width: 1.2,
+        child: SizedBox(
+          width: 200,
+          child: Row(
+            children: List.generate(4, (index) {
+              return Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: TextField(
+                    controller: _controllers[index],
+                    focusNode: _focusNodes[index],
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.number,
+                    maxLength: 1,
+                    decoration: InputDecoration(
+                      counterText: '', // Hide the character counter
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: _hasFocus[index]
+                              ? const Color.fromARGB(255, 54, 52, 52)
+                              : Colors.grey.shade500,
+                          width: 1.2,
+                        ),
                       ),
                     ),
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey.shade500,
-                        width: 1.2,
-                      ),
-                    ),
+                    onChanged: (text) => _onTextChanged(index),
                   ),
-                  onChanged: (text) => _onTextChanged(index),
                 ),
-              ),
-            );
-          }),
+              );
+            }),
+          ),
         ),
       ),
     );
