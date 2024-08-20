@@ -2,6 +2,7 @@ import 'package:farmmitra/components/custom_text_button.dart';
 import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
 import 'package:farmmitra/components/otp_text_field.dart';
+import 'package:farmmitra/components/password_text_field.dart';
 import 'package:farmmitra/pages/sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -45,26 +46,19 @@ class ForgotPassword extends StatelessWidget {
               // input field for email address
               InputTextField(
                 hintText: 'Email address',
-                obscureText: false,
               ),
               SizedBox(
                 height: 20.0,
               ),
 
               // text field for new password
-              InputTextField(
-                hintText: 'New Password',
-                obscureText: true,
-              ),
+              PasswordTextField(hintText: 'New password'),
               SizedBox(
                 height: 20.0,
               ),
 
               // text field for confirming new password
-              InputTextField(
-                hintText: 'Confirm password',
-                obscureText: true,
-              ),
+              PasswordTextField(hintText: 'Confirm password'),
               SizedBox(
                 height: 25.0,
               ),

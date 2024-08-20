@@ -1,5 +1,6 @@
 import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
+import 'package:farmmitra/components/password_text_field.dart';
 import 'package:farmmitra/components/square_tile.dart';
 import 'package:farmmitra/pages/sign_in.dart';
 import 'package:flutter/material.dart';
@@ -21,9 +22,11 @@ class DriverProgram extends StatelessWidget {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignIn()))
               }),
               SizedBox(height: 25.0,),
-              InputTextField(hintText: 'Username',obscureText: false,),
+              InputTextField(hintText: 'Username'),
               SizedBox(height: 25.0,),
-              InputTextField(hintText: 'Password',obscureText: true,),
+              InputTextField(hintText: 'Password'),
+              SizedBox(height: 25.0,),
+              PasswordTextField(hintText: 'Password')
             ],
           ),
       ),

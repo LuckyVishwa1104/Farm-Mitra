@@ -1,10 +1,12 @@
 import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
 import 'package:farmmitra/components/or_continue_with.dart';
+import 'package:farmmitra/components/password_text_field.dart';
 import 'package:farmmitra/components/registration_footer.dart';
 import 'package:farmmitra/components/secondary_method.dart';
 import 'package:farmmitra/pages/sign_in.dart';
 import 'package:flutter/material.dart';
+import 'package:farmmitra/components/navigation_util.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -48,19 +50,19 @@ class SignUp extends StatelessWidget {
                 ),
 
                 // text field for first/last name
-                InputTextField(hintText: 'Your name', obscureText: false),
+                InputTextField(hintText: 'Your name'),
                 SizedBox(
                   height: 20.0,
                 ),
 
                 // text field for userId
-                InputTextField(hintText: 'Username', obscureText: false),
+                InputTextField(hintText: 'Username'),
                 SizedBox(
                   height: 20.0,
                 ),
 
                 // text field for password
-                InputTextField(hintText: 'Password', obscureText: true),
+                PasswordTextField(hintText: 'Password'),
                 SizedBox(
                   height: 20.0,
                 ),
@@ -68,7 +70,7 @@ class SignUp extends StatelessWidget {
                 // sign up button
                 MyButton(
                   buttonText: 'Sign Up',
-                  onPressed: () => redirectToSignIn(context),
+                  onPressed: () => redirectTo(context,const SignIn()),
                 ),
                 SizedBox(
                   height: 20.0,

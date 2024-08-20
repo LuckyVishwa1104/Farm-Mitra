@@ -2,6 +2,7 @@ import 'package:farmmitra/components/custom_text_button.dart';
 import 'package:farmmitra/components/input_text.dart';
 import 'package:farmmitra/components/my_button.dart';
 import 'package:farmmitra/components/or_continue_with.dart';
+import 'package:farmmitra/components/password_text_field.dart';
 import 'package:farmmitra/components/registration_footer.dart';
 import 'package:farmmitra/components/secondary_method.dart';
 import 'package:farmmitra/components/navigation_util.dart';
@@ -45,13 +46,13 @@ class SignIn extends StatelessWidget {
                 ),
 
                 // text field for username
-                InputTextField(hintText: 'Username', obscureText: false),
+                InputTextField(hintText: 'Username'),
                 SizedBox(
                   height: 20.0,
                 ),
 
                 // text field for password
-                InputTextField(hintText: 'Password', obscureText: true),
+                PasswordTextField(hintText: 'Password'),
                 SizedBox(
                   height: 5.0,
                 ),
