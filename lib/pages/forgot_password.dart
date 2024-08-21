@@ -1,8 +1,8 @@
-import 'package:farmmitra/components/custom_text_button.dart';
-import 'package:farmmitra/components/input_text.dart';
-import 'package:farmmitra/components/my_button.dart';
-import 'package:farmmitra/components/otp_text_field.dart';
-import 'package:farmmitra/components/password_text_field.dart';
+import 'package:farmmitra/components/button_components/custom_text_button.dart';
+import 'package:farmmitra/components/text_components/input_text.dart';
+import 'package:farmmitra/components/button_components/my_button.dart';
+import 'package:farmmitra/components/text_components/otp_text_field.dart';
+import 'package:farmmitra/components/text_components/password_text_field.dart';
 import 'package:farmmitra/pages/sign_in.dart';
 import 'package:flutter/material.dart';
 
