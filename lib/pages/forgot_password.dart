@@ -1,4 +1,5 @@
 import 'package:farmmitra/components/button_components/custom_text_button.dart';
+import 'package:farmmitra/components/navigation_util.dart';
 import 'package:farmmitra/components/text_components/input_text.dart';
 import 'package:farmmitra/components/button_components/my_button.dart';
 import 'package:farmmitra/components/text_components/otp_text_field.dart';
@@ -8,15 +9,6 @@ import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});
-
-  void resetPassword(BuildContext context) {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const SignIn(),
-      ),
-    );
-  }
 
   void generateOTP() {}
 
@@ -85,7 +77,7 @@ class ForgotPassword extends StatelessWidget {
               // button for restting the password
               MyButton(
                 buttonText: 'Reset Password',
-                onPressed: () => resetPassword(context),
+                onPressed: () => redirectTo(context, const SignIn()),
               ),
             ],
           ),

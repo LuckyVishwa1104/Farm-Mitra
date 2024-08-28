@@ -36,11 +36,11 @@ class SignUp extends StatelessWidget {
                   Icons.lock,
                   size: 100,
                 ),
-
-                // welcome message
                 SizedBox(
                   height: 20.0,
                 ),
+
+                // welcome message
                 Text(
                   "Welcome, let's get started!",
                   style: TextStyle(color: Colors.grey[700], fontSize: 16),
