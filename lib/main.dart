@@ -1,5 +1,3 @@
-import 'package:farmmitra/driver_program.dart';
-import 'package:farmmitra/pages/sign_in.dart';
 import 'package:farmmitra/pages/sign_up.dart';
 import 'package:flutter/material.dart';
 
