@@ -6,8 +6,8 @@ import 'package:farmmitra/components/text_components/password_text_field.dart';
 import 'package:farmmitra/components/registration_footer.dart';
 import 'package:farmmitra/components/secondary_method.dart';
 import 'package:farmmitra/components/navigation_util.dart';
-import 'package:farmmitra/driver_program.dart';
 import 'package:farmmitra/pages/forgot_password.dart';
+import 'package:farmmitra/pages/home_page.dart';
 import 'package:farmmitra/pages/sign_up.dart';
 import 'package:flutter/material.dart';
 
@@ -83,7 +83,7 @@ class SignIn extends StatelessWidget {
                   buttonText: 'Sign In',
                   onPressed: () => redirectTo(
                     context,
-                    DriverProgram(),
+                    HomePage(),
                   ),
                 ),
                 SizedBox(
