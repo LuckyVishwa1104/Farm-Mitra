@@ -9,11 +9,11 @@ class SecondaryMethod extends StatelessWidget {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SquareTile(imagePath: 'lib/assets/images/google.png'),
+        SquareTile(imagePath: 'assets/images/google.png'),
         SizedBox(
           width: 25,
         ),
-        SquareTile(imagePath: 'lib/assets/images/apple.png')
+        SquareTile(imagePath: 'assets/images/apple.png')
       ],
     );
   }
