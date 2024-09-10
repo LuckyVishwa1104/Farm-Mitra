@@ -3,8 +3,8 @@ import 'package:farmmitra/components/text_components/input_text.dart';
 import 'package:farmmitra/components/button_components/my_button.dart';
 import 'package:farmmitra/components/static_components/or_continue_with.dart';
 import 'package:farmmitra/components/text_components/password_text_field.dart';
-import 'package:farmmitra/components/registration_footer.dart';
-import 'package:farmmitra/components/secondary_method.dart';
+import 'package:farmmitra/components/registration/registration_footer.dart';
+import 'package:farmmitra/components/registration/secondary_method.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'static_components/square_tile.dart';
+import '../static_components/square_tile.dart';
 
 class SecondaryMethod extends StatelessWidget {
   const SecondaryMethod({super.key});
