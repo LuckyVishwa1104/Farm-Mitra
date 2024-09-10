@@ -1,5 +1,5 @@
 import 'package:farmmitra/components/button_components/custom_text_button.dart';
-import 'package:farmmitra/components/navigation/push_named.dart';
+import 'package:farmmitra/components/navigation/push_replacement_named.dart';
 import 'package:farmmitra/components/text_components/input_text.dart';
 import 'package:farmmitra/components/button_components/my_button.dart';
 import 'package:farmmitra/components/static_components/or_continue_with.dart';
@@ -62,7 +62,7 @@ class SignIn extends StatelessWidget {
                     children: [
                       CustomTextButton(
                         buttonText: 'Forgot Password?',
-                        onPressed: () => pushNamed(
+                        onPressed: () => pushReplacementNamed(
                           context,
                           '/forgotPassword',
                         ),
@@ -78,7 +78,7 @@ class SignIn extends StatelessWidget {
                 // sign-in button
                 MyButton(
                   buttonText: 'Sign In',
-                  onPressed: () => pushNamed(
+                  onPressed: () => pushReplacementNamed(
                     context,
                     '/homePage',
                   ),

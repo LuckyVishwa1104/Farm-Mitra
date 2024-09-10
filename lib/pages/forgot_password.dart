@@ -1,5 +1,5 @@
 import 'package:farmmitra/components/button_components/custom_text_button.dart';
-import 'package:farmmitra/components/navigation/push_named.dart';
+import 'package:farmmitra/components/navigation/push_replacement_named.dart';
 import 'package:farmmitra/components/text_components/input_text.dart';
 import 'package:farmmitra/components/button_components/my_button.dart';
 import 'package:farmmitra/components/text_components/otp_text_field.dart';
@@ -76,7 +76,7 @@ class ForgotPassword extends StatelessWidget {
               // button for restting the password
               MyButton(
                 buttonText: 'Reset Password',
-                onPressed: () => pushNamed(context, '/signIn'),
+                onPressed: () => pushReplacementNamed(context, '/signIn'),
               ),
             ],
           ),
