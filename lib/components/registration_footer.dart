@@ -1,11 +1,11 @@
 import 'package:farmmitra/components/button_components/custom_text_button.dart';
-import 'package:farmmitra/components/navigation/push_replacement.dart';
+import 'package:farmmitra/components/navigation/push_named.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationFooter extends StatelessWidget {
   final String greetMessage;
   final String buttonText;
-  final Widget pageDesignation;
+  final String pageDesignation;
   const RegistrationFooter(
       {super.key,
       required this.greetMessage,
@@ -26,7 +26,7 @@ class RegistrationFooter extends StatelessWidget {
         ),
         CustomTextButton(
           buttonText: buttonText,
-          onPressed: () => redirectTo(
+          onPressed: () => pushNamed(
             context,
             pageDesignation,
           ),
