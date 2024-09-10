@@ -1,5 +1,5 @@
 import 'package:farmmitra/components/button_components/custom_text_button.dart';
-import 'package:farmmitra/components/navigation_util.dart';
+import 'package:farmmitra/components/navigation/push_replacement.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationFooter extends StatelessWidget {

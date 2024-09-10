@@ -6,7 +6,7 @@ import 'package:farmmitra/components/registration_footer.dart';
 import 'package:farmmitra/components/secondary_method.dart';
 import 'package:farmmitra/pages/sign_in.dart';
 import 'package:flutter/material.dart';
-import 'package:farmmitra/components/navigation_util.dart';
+import 'package:farmmitra/components/navigation/push_replacement.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
