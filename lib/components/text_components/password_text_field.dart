@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 
 class PasswordTextField extends StatefulWidget {
   final String hintText;
-  const PasswordTextField({super.key, required this.hintText});
+  final bool existance;
+  final TextEditingController controller;
+  const PasswordTextField(
+      {super.key,
+      required this.hintText,
+      required this.existance,
+      required this.controller});
 
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();
@@ -24,6 +30,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
         horizontal: 25.0,
       ),
       child: TextField(
+        controller: widget.controller,
         obscureText: _obscureText,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
@@ -33,13 +40,17 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
           ),
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(
-              color: Color.fromARGB(255, 54, 52, 52),
+              color: Colors.black,
               width: 1.2,
             ),
           ),
           fillColor: Colors.grey.shade200,
           filled: true,
           hintText: widget.hintText,
+          errorText: widget.existance ? 'Enter valid details' : null,
+          errorBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
+          ),
           contentPadding: const EdgeInsets.symmetric(
             vertical: 18,
             horizontal: 10,
@@ -47,12 +58,15 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
           suffixIcon: IconButton(
             icon: Icon(
               _obscureText ? Icons.visibility_off : Icons.visibility,
+              color: Colors.grey[800],
             ),
             onPressed: () {
               obscurity();
             },
             style: IconButton.styleFrom().copyWith(
-              overlayColor: MaterialStateProperty.all(Colors.transparent),
+              overlayColor: WidgetStateProperty.all(
+                Colors.transparent,
+              ),
             ),
           ),
         ),

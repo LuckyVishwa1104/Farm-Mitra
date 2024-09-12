@@ -28,7 +28,7 @@ class MyButton extends StatelessWidget {
                 // Rounded corners
               ),
             ).copyWith(
-                overlayColor: MaterialStateProperty.all(Colors.transparent)),
+                overlayColor: WidgetStateProperty.all(Colors.transparent)),
             child: Text(buttonText),
           ),
         ],

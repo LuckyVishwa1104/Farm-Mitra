@@ -6,8 +6,18 @@ import 'package:farmmitra/components/text_components/otp_text_field.dart';
 import 'package:farmmitra/components/text_components/password_text_field.dart';
 import 'package:flutter/material.dart';
 
-class ForgotPassword extends StatelessWidget {
+class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
+
+  @override
+  State<ForgotPassword> createState() => _ForgotPasswordState();
+}
+
+class _ForgotPasswordState extends State<ForgotPassword> {
+  final bool _isNotValid2 = false;
+  final bool _isNotValid3 = false;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   void generateOTP() {}
 
@@ -20,37 +30,50 @@ class ForgotPassword extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // icon for simplicity
-              Icon(
-                  Icons.lock,
-                  size: 100,
+              const Icon(
+                Icons.lock,
+                size: 100,
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Text(
+                "Reset your Password to continue.",
+                style: TextStyle(
+                  color: Colors.grey[700],
+                  fontSize: 16,
                 ),
-              SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  "Reset your Password to continue.",
-                  style: TextStyle(color: Colors.grey[700], fontSize: 16),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
               // input field for email address
               InputTextField(
+                controller: emailController,
                 hintText: 'Email address',
+                existance: _isNotValid2,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
 
               // text field for new password
-              PasswordTextField(hintText: 'New password'),
-              SizedBox(
+              PasswordTextField(
+                controller: passwordController,
+                hintText: 'New password',
+                existance: _isNotValid3,
+              ),
+              const SizedBox(
                 height: 20.0,
               ),
 
               // text field for confirming new password
-              PasswordTextField(hintText: 'Confirm password'),
-              SizedBox(
+              PasswordTextField(
+                controller: passwordController,
+                hintText: 'Confirm password',
+                existance: _isNotValid3,
+              ),
+              const SizedBox(
                 height: 25.0,
               ),
 
@@ -60,23 +83,28 @@ class ForgotPassword extends StatelessWidget {
                 onPressed: () => generateOTP(),
                 fontSize: 16.0,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 2.0,
               ),
 
               // input field for OTP
-              OtpTextField(onCompleted: (otp) {
-                print('Entered OTP: $otp');
-                // Handle OTP submission here
-              },),
-              SizedBox(
+              OtpTextField(
+                onCompleted: (otp) {
+                  print('Entered OTP: $otp');
+                  // Handle OTP submission here
+                },
+              ),
+              const SizedBox(
                 height: 28.0,
               ),
 
               // button for restting the password
               MyButton(
                 buttonText: 'Reset Password',
-                onPressed: () => pushReplacementNamed(context, '/signIn'),
+                onPressed: () => pushReplacementNamed(
+                  context,
+                  '/signIn',
+                ),
               ),
             ],
           ),

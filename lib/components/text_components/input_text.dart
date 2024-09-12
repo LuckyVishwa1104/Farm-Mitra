@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 
 class InputTextField extends StatelessWidget {
   final String hintText;
-  const InputTextField(
-      {super.key, required this.hintText});
+  final bool existance;
+  final TextEditingController controller;
+
+  const InputTextField({
+    super.key,
+    required this.hintText,
+    required this.existance,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +19,7 @@ class InputTextField extends StatelessWidget {
         horizontal: 25.0,
       ),
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
@@ -20,13 +28,16 @@ class InputTextField extends StatelessWidget {
           ),
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(
-              color: Color.fromARGB(255, 54, 52, 52),
-              width: 1.2,
+              color: Colors.black,
             ),
           ),
           fillColor: Colors.grey.shade200,
           filled: true,
           hintText: hintText,
+          errorText: existance ? 'Enter valid details' : null,
+          errorBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
+          ),
           contentPadding: const EdgeInsets.symmetric(
             vertical: 18,
             horizontal: 10,

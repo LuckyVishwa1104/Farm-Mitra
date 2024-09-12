@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Icon(Icons.grid_3x3),
+      // drawer: const Icon(Icons.grid_3x3),
       appBar: AppBar(
         title: const Text('FarmMitra'),
         backgroundColor: Colors.blue,
